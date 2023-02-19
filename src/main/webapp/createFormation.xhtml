@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+
+</h:head>
+<h:body bgcolor="white">
+    <h2>Création d'une formation</h2>
+    <h:form>
+        <h:outputText value="nom"/>
+        <h:inputText  value="#{formationController.current.nom}" title="nom"  class="form-control"  /><br/>
+
+        <h:outputText value="dateDebut"/>
+        <h:inputText  value="#{formationController.current.dateDebut}" title="dateDebut"  class="form-control"  /><br/>
+
+        <h:outputText value="dateFin"/>
+        <h:inputText  value="#{formationController.current.dateFin}" title="dateFin"  class="form-control"  /><br/>
+
+        <h:outputText value="prix"/>
+        <h:inputText  value="#{formationController.current.prix}" title="prix"  class="form-control"  /><br/>
+
+        <h:outputText value="description"/>
+        <h:inputText  value="#{formationController.current.description}" title="description"  class="form-control"  /><br/>
+
+        <h:outputText value="formateur"/>
+        <h:inputText  value="#{formationController.current.formateur}" title="formateur"  class="form-control"  /><br/>
+
+
+        <h:commandButton action="#{formationController.createFormation(formationController.current)}"  value="Créer" class="btn btn-Success"/>
+    </h:form>
+
+</h:body>
+</html>

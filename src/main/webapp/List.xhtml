@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+</h:head>
+<h:body>
+
+
+
+
+
+
+    <div class="container-fluid" style="padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;">
+    <div class="row" style="    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;">
+
+    <div class="col-12" style="flex: 0 0 100%;
+    max-width: 100%;">
+    <div class="card" style="position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid #e9ecef;
+    border-radius: 0.25rem;">
+        <div class="card-body">
+            <h4 class="card-title">La Liste des formations</h4>
+
+        </div>
+        <h:form>
+            <h:dataTable value="#{formationController.formations}" var="formation"
+                         styleClass="order-table"
+                         headerClass="order-table-header"
+                         rowClasses="order-table-odd-row,order-table-even-row"
+                         style="    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;">
+
+                <h:column>
+                    <f:facet name="header" style="vertical-align: bottom;
+    border-bottom: 2px solid #e8eef3;">
+                        Identifiant
+                    </f:facet>
+                    <h:outputText value="#{formation.id}" />
+                </h:column>
+
+
+                <h:column>
+                    <f:facet name="header" style="vertical-align: bottom;
+    border-bottom: 2px solid #e8eef3;">
+                        nom
+                    </f:facet>
+                    <h:outputText value="#{formation.nom}" />
+                </h:column>
+
+
+
+
+
+                <h:column>
+                    <f:facet name="header">Actions</f:facet>
+                    <h:commandButton value="Afficher" action="#{FormationController.prepareView(formation)}" class="btn btn-success"/> &nbsp;
+                    <h:commandButton value="Editer" action="#{FormationController.prepareEdit(formation)}" class="btn btn-info"/> &nbsp;
+                    <h:commandButton value="Supprimer" action="#{FormationController.destroy(formation)}" class="btn btn-danger"/> &nbsp;
+                </h:column>
+            </h:dataTable>
+            <h:commandLink action="/index" value="Page d'accueil" class="btn btn-primary"/>
+        </h:form>
+    </div>    </div>
+    </div>
+    </div>
+
+</h:body>
+</html>

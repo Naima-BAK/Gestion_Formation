@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+
+
+<h:head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Page d'accueil</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <script src="js/ie-emulation-modes-warning.js" type=""></script>
+    <style type="">
+        h1{text-align: center;}
+    </style>
+
+</h:head>
+<h:body>
+    <h1>Gestion des formations</h1>
+    <h:form>
+
+        <h:commandButton value="Créer une formation" action="createFormation" class="btn btn-primary"></h:commandButton>
+        <br/><br/>
+        <h:commandButton value="Visualiser la liste des formations" action="List" class="btn btn-danger"></h:commandButton>
+
+
+        <div class="container">
+            <div class="navbar navbar-default" >
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h:commandLink action="/index" value="Banque" class="navbar-brand"/>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle">formation <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+
+                                    <li><h:commandLink action="/List" value="Liste"/>Liste</li>
+                                    <li><h:commandLink action="/Formation/Create" value="Ajouter"/>Ajouter</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h3>Page d'accueil</h3>
+            <hr/>
+            <h:commandLink action="/List" value="Gestion des formations" class="btn btn-primary"/> &nbsp;
+
+        </div>
+    </h:form>
+
+    <script src="js/jquery.min.js" type=""></script>
+    <script src="js/bootstrap.min.js" type=""></script>
+    <script src="js/ie10-viewport-bug-workaround.js" type=""></script>
+
+
+</h:body>
+</html>
